@@ -10,6 +10,14 @@ module.exports = {
   devServer:{
     open:true
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template:path.resolve(__dirname, 'public/index.html')
