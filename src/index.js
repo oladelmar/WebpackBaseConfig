@@ -1,3 +1,3 @@
-import './assets/main.css'
+import './assets/styles/main.sass'
 
 console.log('Webpack is working')
