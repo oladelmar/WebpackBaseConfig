@@ -18,3 +18,9 @@ Init Project
     yarn add webpack-dev-server html-webpack-plugin
 ```
 
+##Vue
+
+```sh
+    yarn add vue-loader vue-template-compile
+```
+
