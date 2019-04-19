@@ -56,21 +56,20 @@
                 <v-flex sm10 offset-sm1 mt-5>
                     <v-card>
                         <v-card-actions>
-                            <v-select v-model="size" :items="items" label="Size"></v-select>
                             <v-spacer></v-spacer>
                         </v-card-actions>
                         <v-container v-bind="{ [`grid-list-${size}`]: true }" fluid>
                             <v-layout row wrap>
                                 <v-flex
-                                        v-for="n in 9"
-                                        :key="n"
+                                        v-for="img in images"
+                                        :key="img"
                                         sm6 md4 xs12
                                 >
                                     <v-card flat tile>
-                                        <v-img
-                                                :src="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
-                                                height="150px"
-                                        ></v-img>
+                                        <img
+                                                style="max-width: 100%"
+                                                :src="img"
+                                        ></img>
                                     </v-card>
                                 </v-flex>
                             </v-layout>
@@ -89,6 +88,15 @@
 </template>
 
 <script>
+  import img1 from 'img/1.jpg'
+  import img2 from 'img/2.jpg'
+  import img3 from 'img/3.jpeg'
+  import img4 from 'img/4.jpeg'
+  import img5 from 'img/5.jpeg'
+  import img6 from 'img/6.jpeg'
+  import img7 from 'img/7.jpeg'
+  import img8 from 'img/8.jpeg'
+  import img9 from 'img/9.jpg'
   export default {
     data: () => ({
       drawer: null,
@@ -96,12 +104,16 @@
       right: false,
       left: false,
       size: 'sm',
-      items: [
-        { text: 'Extra small (2px)', value: 'xs' },
-        { text: 'Small (4px)', value: 'sm' },
-        { text: 'Medium (8px)', value: 'md' },
-        { text: 'Large (16px)', value: 'lg' },
-        { text: 'Extra large (24px)', value: 'xl' }
+      images: [
+        img1,
+        img2,
+        img3,
+        img4,
+        img5,
+        img6,
+        img7,
+        img8,
+        img9
       ]
     }),
     props: {
