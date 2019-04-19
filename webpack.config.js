@@ -32,6 +32,12 @@ module.exports = {
           }
         }
       },
+
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
@@ -53,7 +59,7 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        use: 'vue-loader'
+        use: ['vue-loader',"eslint-loader"]
       }
     ]
   },
