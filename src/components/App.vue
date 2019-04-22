@@ -80,11 +80,12 @@
                   <v-card
                     flat
                     tile
+                    class="d-flex"
                   >
-                    <img
-                      style="max-width: 100%"
+                    <v-img
+                      max-width="100%"
                       :src="img"
-                    >
+                    />
                   </v-card>
                 </v-flex>
               </v-layout>
@@ -105,12 +106,12 @@ import img5 from 'img/5.jpeg'
 import img6 from 'img/6.jpeg'
 import img7 from 'img/7.jpeg'
 import img8 from 'img/8.jpeg'
-import img9 from 'img/9.png'
+import img9 from 'img/9.jpg'
 export default {
   data: () => ({
-    drawer: null,
-    drawerRight: null,
-    right: false,
+    drawer: false,
+    drawerRight: false,
+    right: true,
     left: false,
     size: 'sm',
     images: [
