@@ -106,7 +106,7 @@ import img5 from 'img/5.jpeg'
 import img6 from 'img/6.jpeg'
 import img7 from 'img/7.jpeg'
 import img8 from 'img/8.jpeg'
-import img9 from 'img/9.jpg'
+import img9 from 'img/9.png'
 export default {
   data: () => ({
     drawer: false,
