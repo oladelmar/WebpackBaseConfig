@@ -1,7 +1,8 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
 
@@ -13,12 +14,12 @@ module.exports = {
   resolve: {
     modules: [
       'node_modules',
-      'public',
+      'public'
     ]
   },
-  devServer:{
+  devServer: {
     hot: true,
-    open:true
+    open: true
   },
   module: {
     rules: [
@@ -36,7 +37,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "eslint-loader",
+        loader: "eslint-loader"
       },
       {
         test: /\.css$/,
@@ -44,7 +45,14 @@ module.exports = {
       },
       {
         test: /\.scss|sass$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [autoprefixer()]
+            }
+          },
+              'sass-loader']
       },
       {
         test: /\.(png|jpg|gif|jpeg)$/,
@@ -59,15 +67,15 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        use: ['vue-loader',"eslint-loader"]
+        use: ['vue-loader', "eslint-loader"]
       }
     ]
   },
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template:path.resolve(__dirname, 'public/index.html')
-    }),
+      template: path.resolve(__dirname, 'public/index.html')
+    })
   ],
   optimization: {
     minimize: true,

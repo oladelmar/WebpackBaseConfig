@@ -8,6 +8,10 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "license": "MIT",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "dependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
@@ -36,5 +40,9 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "postcss-loader": "^3.0.0"
   }
 }
