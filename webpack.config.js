@@ -37,7 +37,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "eslint-loader"
+        loader: 'eslint-loader'
       },
       {
         test: /\.css$/,
@@ -52,7 +52,7 @@ module.exports = {
               plugins: () => [autoprefixer()]
             }
           },
-              'sass-loader']
+          'sass-loader']
       },
       {
         test: /\.(png|jpg|gif|jpeg)$/,
@@ -67,7 +67,7 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        use: ['vue-loader', "eslint-loader"]
+        use: ['vue-loader', 'eslint-loader']
       }
     ]
   },
